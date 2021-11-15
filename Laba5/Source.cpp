@@ -20,7 +20,7 @@ void BFS(int n, bool* Arr2, int i, int** Arr)
 	{
 		i = que.front();
 		que.pop();
-		printf("%d ", i + 1);
+		cout << i + 1 << " ";
 
 		for (int j = 1; j < n; j++)
 		{
@@ -36,9 +36,9 @@ void BFS(int n, bool* Arr2, int i, int** Arr)
 void Create_matrix() {
 	int start, n, t = clock();
 
-	cout << "Çàäàíèå 1" << endl;
+	cout << "Ã‡Ã Ã¤Ã Ã­Ã¨Ã¥ 1" << endl;
 
-	cout << "Êîëè÷åñòâî âåðøèí > "; cin >> n;
+	cout << "ÃŠÃ®Ã«Ã¨Ã·Ã¥Ã±Ã²Ã¢Ã® Ã¢Ã¥Ã°Ã¸Ã¨Ã­ > "; cin >> n;
 
 	bool* visited = new bool[n];
 
@@ -51,7 +51,7 @@ void Create_matrix() {
 
 	int s = 1;
 	srand(time(NULL));
-	for (int i = 0; i < n; i++) // ñîçäàíèå ìàòðèöû
+	for (int i = 0; i < n; i++) // Ã±Ã®Ã§Ã¤Ã Ã­Ã¨Ã¥ Ã¬Ã Ã²Ã°Ã¨Ã¶Ã»
 	{
 		matrix[i] = (int*)malloc(n * sizeof(int));
 		matrix[i][i] = 0;
@@ -68,13 +68,13 @@ void Create_matrix() {
 		s++;
 	}
 	s = 1;
-	for (int i = 0; i < n; i++) // íåîðèåíòèðîâàííûé ãðàô
+	for (int i = 0; i < n; i++) // Ã­Ã¥Ã®Ã°Ã¨Ã¥Ã­Ã²Ã¨Ã°Ã®Ã¢Ã Ã­Ã­Ã»Ã© Ã£Ã°Ã Ã´
 	{
 		for (int j = s; j < n; j++)
 			matrix[j][i] = matrix[i][j];
 		s++;
 	}
-	cout << "Matrix"; // âûâîä ìàòðèöû íà ýêðàí
+	cout << "Matrix"; // Ã¢Ã»Ã¢Ã®Ã¤ Ã¬Ã Ã²Ã°Ã¨Ã¶Ã» Ã­Ã  Ã½ÃªÃ°Ã Ã­
 	for (int i = 0; i < n; i++)
 	{
 		cout << endl;
@@ -84,13 +84,13 @@ void Create_matrix() {
 		}
 	}
 	cout << endl;
-	cout << "Ñòàðòîâàÿ âåðøèíà > "; cin >> start;
-	cout << "Ïîðÿäîê îáõîäà: ";
+	cout << "Ã‘Ã²Ã Ã°Ã²Ã®Ã¢Ã Ã¿ Ã¢Ã¥Ã°Ã¸Ã¨Ã­Ã  > "; cin >> start;
+	cout << "ÃÃ®Ã°Ã¿Ã¤Ã®Ãª Ã®Ã¡ÃµÃ®Ã¤Ã : ";
 	BFS(n, visited, start -1, matrix);
 
 	delete[]visited;
 
-	cout << "\nÒàêòû:" << ((float)t / CLOCKS_PER_SEC) << "\n";
+	cout << "\nÃ’Ã ÃªÃ²Ã»:" << ((float)t / CLOCKS_PER_SEC) << "\n";
 	system("pause");
 }
 void main() {
